@@ -36,6 +36,6 @@ const calcAvarageHumanAge = function (ages) {
     .reduce((acc, age, _, { length }) => {
       return acc + age / length;
     }, 0);
-  console.log(humanAges);
+  return humanAges;
 };
-calcAvarageHumanAge(dogAges1);
+console.log(calcAvarageHumanAge([16, 6, 10, 5, 6, 1, 4]));
