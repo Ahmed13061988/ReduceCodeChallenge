@@ -23,9 +23,9 @@ const checkDogs = function (dogsJulia, dogsKate) {
 
 const dogAges1 = [5, 2, 4, 1, 15, 8, 3];
 
-const calcAvarageHumanAge = function (ages) {
+const calcAvarageHumanAge = (ages) => {
   const humanAges = ages
-    .map(function (age) {
+    .map((age) => {
       if (age <= 2) {
         return 2 * age;
       } else {
@@ -33,8 +33,8 @@ const calcAvarageHumanAge = function (ages) {
       }
     })
     .filter((age) => age >= 18)
-    .reduce((acc, age, _, { length }) => {
-      return acc + age / length;
+    .reduce((acc, age, i, arr) => {
+      return acc + age / arr.length;
     }, 0);
   return humanAges;
 };
