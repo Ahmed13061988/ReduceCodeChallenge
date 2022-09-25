@@ -33,12 +33,8 @@ const calcAvarageHumanAge = function (ages) {
       }
     })
     .filter((age) => age >= 18)
-    .reduce((acc, age, _, ages) => {
-      console.log(age);
-      let len = 0;
-      len = ages.length;
-      acc += age;
-      return acc;
+    .reduce((acc, age, _, { length }) => {
+      return acc + age / length;
     }, 0);
   console.log(humanAges);
 };
