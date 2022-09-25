@@ -19,4 +19,18 @@ const checkDogs = function (dogsJulia, dogsKate) {
   });
 };
 
-checkDogs(dogsJulia, dogsKate);
+// checkDogs(dogsJulia, dogsKate);
+
+const dogAges1 = [3, 4, 5, 1, 2, 7];
+
+const calcAvarageHumanAge = function (ages) {
+  const humanAges = ages.map(function (age) {
+    if (age <= 2) {
+      return 2 * age;
+    } else {
+      return 16 + age * 4;
+    }
+  });
+  console.log(humanAges);
+};
+calcAvarageHumanAge(dogAges1);
