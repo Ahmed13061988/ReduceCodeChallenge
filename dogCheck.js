@@ -21,16 +21,22 @@ const checkDogs = function (dogsJulia, dogsKate) {
 
 // checkDogs(dogsJulia, dogsKate);
 
-const dogAges1 = [3, 4, 5, 1, 2, 7];
+const dogAges1 = [5, 2, 4, 1, 15, 8, 3];
 
 const calcAvarageHumanAge = function (ages) {
-  const humanAges = ages.map(function (age) {
-    if (age <= 2) {
-      return 2 * age;
-    } else {
-      return 16 + age * 4;
-    }
-  });
+  const humanAges = ages
+    .map(function (age) {
+      if (age <= 2) {
+        return 2 * age;
+      } else {
+        return 16 + age * 4;
+      }
+    })
+    .filter((age) => age >= 18)
+    .reduce((acc, age, i) => {
+      acc += age;
+      return acc;
+    }, 0);
   console.log(humanAges);
 };
 calcAvarageHumanAge(dogAges1);
